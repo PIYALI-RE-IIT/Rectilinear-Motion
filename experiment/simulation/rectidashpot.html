@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Study of Rectilinear Motion</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/adik.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script  src="js/Recti_dashpot.js"></script>  
+	
+ <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js  "></script>-->
+ 
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+  
+  
+  <style>
+  
+#anim{display:-webkit-box;-webkit-box-pack:center;opacity:1.5; duration: 4;}
+
+
+#div1 {
+  width: 10%;
+  
+  
+  border: 1px dotted #07ACE1;
+}
+#div2 {
+  width: 10%;
+  
+  
+  border: 1px dotted #07ACE1;
+}
+#div3 {
+  width: 10%;
+  
+  
+  border: 1px dotted #07ACE1;
+}
+#div4 {
+  width: 10%;
+  
+  
+  border: 1px dotted #07ACE1;
+}	
+.col-md-6{
+width:50%;
+min-width:230px;
+min-height:1px;
+text-align:center;
+
+}  
+.img-container {
+    display: inline-block;
+    position: relative;
+}
+  
+  
+  
+  </style>
+    
+</head>
+<body>
+    <div class="container p-3 my-3 text-primary text-center border">
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
+            </div>
+            <div class="col-md-6">
+                <p class="display-1"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
+            </div>
+        </div>
+    
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <p class="h1"> <b> Simulation </b> </p>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+        <hr>
+        <!--<div class="d-flex p-1 text-primary">
+          <div class="p-1" > <p class="h4"><a href="../index.html"> <span class="LN"> <b> Control and Instrumentation Lab </b></span> -- </a></p></div>
+          <div class="p-1"> <p class="h4"><a href="./index.html"> <span class="ExpN"> <b> Study of Rectilinear Motion </b> </span> </a></p></div>
+        </div>-->
+    </div>
+    
+    <!--<div class="container p-3 my-5 text-primary text-center border">
+        <div class="row">
+
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Introduction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../aim.html">Objective</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../prequiz.html">Pre Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../theory.html">Theory</a>
+                </li>
+				<li class="nav-item">
+                  <a class="nav-link" href="../procedure.html">Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">Simulation</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../postquiz.html">Post Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../feedback.html">Feedback</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../references.html">References</a>
+                  </li>
+
+              </ul>
+        </div>
+    </div>-->
+	
+    <div class="container p-3 my-5 text-left border">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+              <div id="inst" style="display:block;height:200px;overflow-y:auto;">
+                <ol>
+                
+                  <li>Drag weights (brown coloured boxes) and drop them in the blue coloured boxes in the mass carriage system (for ex. Drag the uppermost weight and put it in the lowermost blue box). Each of the weights are of 500g. First drag all the weights (i.e. select 2kg mass).</li></br>
+                  
+                  <li>Click on 'Trajectory' from command tab under 'Controls',then click on 'Step'. After that click on 'Setup', put step size to zero, set dwell time to 3000 ms and 2 repetition . Select 'Open loop step' and 'Ok' to observe open loop step response for 2kg mass.</li><br/>
+                 
+                 <li> Click on "Setup Data Acquisition" under 'Data' tab, put 2 as the value of servo cycles and select 'Encoder Position'  .</li></br>
+  
+                  <li>Drag the mass carriage system through the slider up to -2.5cm. </li><br/> 
+  
+                <li>Click on 'Execute' under 'command', then click on 'RUN' button. The system starts to oscillate.</li><br/>
+  
+                <li>After the carriage stops oscillating, an alert massage will be shown. Click on 'Ok'.</li></br>
+  
+                <li>Click on 'Set up Plot' under 'Plotting'. Select 'Encoder Position' and click 'Ok'</li>    </br>
+  
+                <li> Click on 'Plot data' under 'Plotting' ,the 'Open loop step' response for the particular mass chosen, will be shown.</li></br>
+                 
+                <li>Click on 'Reset Controller' under 'Utility' tab to observe response for unloaded mass choosing no weights and following the steps 2 - 8.</li><br/>
+                
+                <li>Under 'Calculation' tab select 'Without Damper', enter both the mass values chosen ( for ex. here the first mass was 2kg and second one is 0kg ) and click on 'Simulate' button to have the values of M<sub>c</sub> (weight of the carriage) and K (spring constant).</li><br/>
+  
+                 <li>Now click on 'Connect Dashpot' button to connect the dashpot to the mass carriage system.</li><br/>
+                 
+                 <li>Similarly drag 2kg weight again and follow the above steps( 1 - 8 ) to observe open loop step response of the mass carriage system with connected dashpot.
+                 </li><br/>
+                 
+                 <li>Under 'Calculation' tab select 'With Damper', enter the mass value chosen ( for ex. here the mass was 2kg ) and click on 'Simulate' button to have the value of C ( dashpot damping coefficient ).</li><br/>
+                 
+                 <li> To observe system velocity first remove dashpot from the mass carriage system by clicking on 'Remove Dashpot' button. Now secure 2kg mass in the carriage.</li><br/>
+                 
+                 <li>Steps will be same, as said before in steps ( 1-8 ) with some following edits. In step 2 set dwell Time to 75 ms and repetition 2 and in step 3 select 'Encoder Velocity'. <!--step 4 Drag the mass carriage system through the slider up to -3cm.-->   </li>
+                 </br>
+                 <li>In step 7 Select 'Encoder Velocity' and click 'Ok'</li><br/>
+                 
+                 <li>Calculate acceleration (for both positive & negative slope) using formula (velocity difference/ time difference) from the velocity vs. time plot.</li><br/>
+                 
+                 <li> Under 'Calculation' tab select 'Gain Calculation'. Enter the acceleration values from positive slope and negative slope of velocity vs. time plot. Click on 'Simulate' button.
+   
+      </ol>
+  </div>
+  </p> 
+          </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+	
+    <div class="container p-3 my-5 border">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <!-- Code Start here-->
+
+  </div>
+        <div class="col-md-1"></div>
+  </div><!--end of first row -->
+ 
+ <div class="row">
+ <div class="col-md-6">
+ <div class ="img-container">
+  <img class="img-fluid " id="img" src="Mass_Dashpot/ULmassd/0.jpg "/><!--div for droppable divs-->
+  
+        <!--<div class=" p-2 text-center" id= "weights" style="display:block;position:absolute;top:0%;left:0%;width:100%;height:100%;z-index:1;">-->
+				<div class=" p-2" id="div4" ondrop="drop(event);hideweights()" ondragover="allowDrop(event)" style="display:block;position:absolute;top:27%;left:41%;width:23%;height:6%;" ></div>
+				<div class=" p-2" id="div3"  ondrop="drop(event);hideweights()" ondragover="allowDrop(event)"style="display:block;position:absolute;top:33%;left:41%;width:23%;height:6%;" ></div>
+				<div class=" p-2" id="div2"  ondrop="drop(event);hideweights()" ondragover="allowDrop(event)"style="display:block;position:absolute;top:39%;left:41%;width:23%;height:6%;" ></div>
+				<div class=" p-2" id="div1"  ondrop="drop(event);hideweights()" ondragover="allowDrop(event)"style="display:block;position:absolute;top:45%;left:41%;width:23%;height:6%;" ></div>
+		<!--</div>-->
+ </div>
+  
+   <input id="valR" type="range" min="-3" max="3" value="0" step="0.5" style="display:none" oninput="showVal1(this.value)" onchange="showVal1(this.value);hideweights()" onmouseover="hover(this.value)" />
+   <input id="valR2" type="range" min="-3" max="3" value="0" step="0.5"  style="display:block" oninput="showVal2(this.value)" onchange="showVal2(this.value);hideweights()" onmouseover="hover(this.value)" />
+   <input id="valR3" type="range" min="-3" max="3" value="0" step="0.5"  style="display:none" oninput="showVal3(this.value)" onchange="showVal3(this.value);hideweights()" onmouseover="hover(this.value)" />
+   <input id="valR4" type="range" min="-3" max="3" value="0" step="0.5"  style="display:none" oninput="showVal4(this.value)" onchange="showVal4(this.value);hideweights()" onmouseover="hover(this.value)" />
+   <input id="valR5" type="range" min="-3" max="3" value="0" step="0.5"  style="display:none" oninput="showVal5(this.value)" onchange="showVal5(this.value);hideweights()" onmouseover="hover(this.value)" />
+   <br/><span class="w-auto text-center" id="range" style="display:block;float:left;">0</span>  
+  
+  </div><!--end of second row first column -->
+  
+  <div class="col-md-6 ">
+  <div class="w-auto  text-center" ><b style=" font-size:25px; color:#0d6efd">Controls</b></div>
+<!----------------------------Dropdown buttons------------------------------------------>	
+<div class="w-auto p-2 my-1" style="text-align:center; border: 3px solid #0d6efd; border-radius: 10px;">
+<!--<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">File</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Load Settings</a></li>
+        <li><a class="dropdown-item" href="#">Save Settings</a></li>
+		<li><a class="dropdown-item" href="#">About</a></li>
+        <li><a class="dropdown-item" href="#">Exit</a></li>
+		
+      </ul>
+    </div>	
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Set Up</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Control Algorithm</a></li>
+        <li><a class="dropdown-item" href="#">User Units</a></li>
+		<li><a class="dropdown-item" href="#">Communications</a></li>
+        </ul>
+    </div>-->
+	
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Command</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" onclick="TBOX()" >Trajectory</a></li>
+        <li><a class="dropdown-item" onclick="EBOX()">Execute</a></li>
+		
+        </ul>
+    </div>
+	
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Data</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" onclick="DBOX()" >Set up Data Acquisition</a></li>
+        </ul>
+    </div>
+	
+	<div class="btn-group my-2">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Plotting</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" onclick="plotsetup()" >Set Up Plot</a></li>
+        <li><a class="dropdown-item" onclick="graph()">Plot Data</a></li>
+		
+        </ul>
+    </div>
+	
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Utility</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" >Zero Position</a></li>
+        <li><a class="dropdown-item" onclick="Resetcontroller()">Reset Controller</a></li>
+		
+        </ul>
+    </div>
+	<!-------------------Button end-------------------------->
+    
+    <br><div class="w-auto p-2 my-1 text-center" style="background-color:powderblue; font-size:20px; color:black;border:1px dotted black;">Apparatus:Linear inertia Model 210</div>
+	<div class="w-auto p-2 my-1 text-center" style="background-color:powderblue;  font-size:20px; color:black;  border:1px dotted black;">Encoder Position counts: <input class="text-center" id="slider" type="number" min="0000" max="6000" value="0000" style="background-color:yellow; " ><br> </div>
+	<div class="w-auto p-2 my-1 " style="background-color:powderblue;  font-size:20px; color:black;  border:1px dotted black;">Control Loop Status: <span id="status">CLOSED </span></div>
+	
+	<p class= "text-center">Ts is set as 0.00442</p> 
+  
+		  
+</div>
+<span class="w-auto text-center" >Mass(kg):</span><select class="w-auto text-center" name="MASS(Kg)" id="MASS(kg)" onclick=" imchange(this)"    style="cursor:pointer; background-color:#85D2EE;"readonly="readonly">
+  <option id="0"  value="1"SELECTED >0</option><option id="0.5"  value="2">0.5</option><option id="1"  value="3">1</option><option id="1.5"  value="4">1.5</option><option id="2"  value="5" readonly=readonly>2</option></select>
+	
+  <div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Calculations</button>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Without Damper</a></li>
+  <li><a class="dropdown-item" onclick="show_DBox()">With Damper</a></li>
+  
+  </ul>
+  </div>
+ <button id="gotodashpot" class="btn btn-primary"  onclick="removeDashpot()" >Remove Dashpot</button>
+	
+</div><!-- end of 1st row 2nd column-->
+</div><!--- end of first row----->
+
+<div class="row"><!----starting second row----->
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+		<!---code start here----->
+		<div class="p-2 gy-4 text-center" id= "drop" style="display:block;width:30%;height:20%">
+<span class="w-auto text-center">Weights</span>(Each of 500g):
+<img class="img-fluid" id="drag1"  src="img_weight0.5.png"   draggable="true" ondragstart="drag(event)"  onmouseover="showweights()" ><br>
+<img class="img-fluid"id="drag2"  src="img_weight1.png" draggable="true" ondragstart="drag(event)"  onmouseover="showweights()" ><br>
+<img class="img-fluid"id="drag3"  src="img_weight1.5.png" draggable="true" ondragstart="drag(event)"  onmouseover="showweights()" ><br>
+<img class="img-fluid"id="drag4"  src="img_weight2.png" draggable="true" ondragstart="drag(event)"  onmouseover="showweights()" >
+
+</div>
+</div><!---end of 2nd row 1st col---->		
+<div class="col-md-5">
+		
+<div class="w-auto p-2 my-1" id="Trajectory Configuration" style="display:none;text-align:center; margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;padding-top:3px;">
+<span class="w-auto text-center"><b>Trajectory Configuration</b></span><br/>
+<span class="w-auto text-center"><b>Selection</b></span></br></br>
+<input class="w-auto text-center" id="step" type="radio" name='signal'value='step'>Step<br>
+<input class="w-auto text-center"id="ramp" type="radio" name='signal'value='ramp' disabled='true'>Ramp<br>
+<input class="w-auto text-center"id="para" type="radio" name='signal'value='parabolic' disabled='true'>Parabolic<br>
+<input class="w-auto text-center"id="cubic" type="radio" name='signal'value='cubic' disabled='true'>Cubic<br>
+<button id="t1" type="button" class="btn btn-primary" onclick="stepcon()" style="display:block;">Set Up</button><br>
+</div>	
+
+<div class="w-auto p-2 my-1"id="Step Configuration" style="display:none;margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;">
+	<span class="w-auto text-center"><b>Configure Step Trajectory</b></span><br/><br/>
+	&nbsp; <input type="number" class=" text-center" value="0.0" readonly=readonly style="width:15%">&nbsp;Step Size (Volts)<br></br>
+	&nbsp; <input type="number" class="w-auto text-center" id="dt" value="3000" min="1000" max="30000" step="1000">&nbsp;Dwell Time(msec)<br></br>
+	&nbsp; <input type="number" class="w-auto text-center"id="rep" value="1" min="1" max="3">&nbsp;Number of reps<br></br>
+	<input class="w-auto text-center"id="clstep" name="control"type="radio" value="closedloopstep"disabled='true'>Closed loop step<br><br/>
+	<input class="w-auto text-center"id="olstep" name="control"type="radio" value="openloopstep"><p id='olradioname'style=" position:relative; top:-20px; left:20px">Open loop step</p>
+	<button type="button" class="btn btn-primary" onclick="stopstep()">Ok</button>
+	</div>
+
+<div class="w-auto p-2 my-1" id="dataAquisition" style="display:none;text-align:center; margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;">
+	 <span class="w-auto text-center" >Setup Data Acquisition</span><br/><br/>
+	&nbsp;&nbsp; &nbsp;&nbsp; <span class="w-auto text-center"> Selected items:</span>
+	&nbsp; &nbsp; <span class="w-auto text-center">Encoder Position</span><br/><br/>
+	&nbsp; &nbsp;<input class="w-auto text-center" type="number" id="servo" min="1" max="10" value="2" >Sample Period(servo Cycle)<br/><br/>
+	<button type="button" class="btn btn-primary" onclick="stopdata()">Ok</button>
+	</div>		
+<div class="w-auto p-2 my-1" id="Execute" style="display:none; margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;">
+<span class="w-auto text-center" style="text-align:center">Selected trajectory:</span></br>
+<span class="w-auto text-center"style="text-align:left;color:blue;">Open loop Step</span><br>
+<button type="button" class="btn btn-primary" id="run2kg"onclick="RunAnim()" style="display:none;">RUN</button>
+<button type="button" class="btn btn-primary"id="run0kg"onclick="RunAnim2()" style="display:block;">RUN</button>
+<button type="button" class="btn btn-primary" id="run0.5kg"onclick="RunAnim3()"style="display:none;">RUN</button>
+<button type="button" class="btn btn-primary"id="run1kg"onclick="RunAnim4()"   style="display:none;">RUN</button>
+<button type="button" class="btn btn-primary"id="run1.5kg"onclick="RunAnim5()" style="display:none;">RUN</button>
+<br/><button type="button" class="btn btn-primary" onclick="CancelRun()">Cancel</button>
+</div>	
+
+<div class="w-auto p-2 my-1" id="Plot Configuration" style="display:none;margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;">
+<span class="w-auto text-center"><b>Plot Configuration</b></span>
+<span class="w-auto text-center"><b>Selection</b></span></br></br>
+<input class="w-auto text-center" id="position" type="radio" name='plotting'value='position'>Encoder Position<br>
+<!--<input class="w-auto text-center"id="velocity" type="radio" name='plotting'value='velocity'>Encoder Velocity<br>-->
+<button  type="button" class="btn btn-primary" onclick="stopplot()"style="display:block ;">OK</button><br>
+</div>
+
+<div class="w-auto p-2 my-1" id="DBox" style="display:none;margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;background-color:#ffffb3">
+  <h1 class="w-auto text-center"style="font-size:20px">Calculations for dashpot damping(damping Coefficient C)</h1>
+  <input class="w-auto text-center"type="number" id="mass" min="0" step="0.5" max="2" value="0.5" >choose mass<br/><br/><br/><br/>
+  
+  <input class="w-auto text-center"type="number" id="wn" value="0" readonly="readonly">Value of W<sub>n</sub> in rad/sec<br><br>
+  <input class="w-auto text-center"type="number" id="zeta" value="0" readonly="readonly">Damping ratio(&zeta;)<br/><br/>
+  <input class="w-auto text-center"type="number" id="C" value="0" readonly="readonly">Damping Coefficient(C)<br/><br/>
+  <button type="button" class="btn btn-primary"  onclick="Simulate2() ">Simulate</button>
+  <button type="button" class="btn btn-primary"  onclick="hide_DBox()" >OK</button>  
+  </div>
+
+
+
+
+
+  
+<!---code end here----->
+</div><!---end of 2nd row 2nd col--->
+<div class="col-md-1"></div>
+</div>
+
+
+
+<div class="row"><!----starting second row----->
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+<div id = "plotbucket" class="content-center" style="display:none; position:relative; border:3px solid blue;height:530px;width:823px ">
+					<button type="button" class="btn btn-primary"id="exportPositionChart"  style="display:none;">Download Plot</button>	
+						<button type="button" class="btn btn-primary"id="exportVelocityChart"  style="display:none;">Download Plot</button>	
+						<div class="w-auto" id="chartContainer" style="display:none;"></div>
+						<div class="w-auto " id="chartContainer2" style="display:none;"> </div>	
+					</div>
+</div>
+<div class="col-md-1"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+    <div class="container p-3 my-5 text-primary text-center border">
+      <div class="row">
+        <footer>
+          <div class="row ce">
+            <div class="col-sm-12">
+              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
+              <a href="../../license/index.html" target="_blank"> Licensing Terms </a>
+            </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+  </div>
+</body>
+</html>

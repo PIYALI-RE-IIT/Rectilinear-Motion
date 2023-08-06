@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Rectilinear Motion Control System</title>
+    <meta charset="utf-8">
+   
+	
+	
+        <link rel="stylesheet" href="demo.css">
+		
+        
+		<!--<script src="../recti-simu/demo/animation/demo.js"></script>
+<script src="jsPlumb.js"></script>
+     <script src="jsPlumb.min.js"></script> -->  
+	
+	
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+	
+	
+	
+	
+	<style>
+	
+	.custombutton{
+	padding:3px 3px ;
+	width:150px;
+	height:30px;
+	color:white;
+	border: none;
+	border-radius:0px;
+	background-color: #4CAF50;
+	
+	}
+	.custombutton:hover{background-color: #CEEF9C;}
+	.custombutton:active{background-color: #8FBD4A;}
+	.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: -100px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#anim{display:-webkit-box;-webkit-box-pack:center;opacity:1.5; duration: 4;}
+
+
+#div1 {
+  width: 100px;
+  height: 15px;
+  padding: 0px;
+  border: 1px solid white;
+}
+#div2 {
+  width: 100px;
+  height: 15px;
+  padding: 0px;
+  border: 1px solid white;
+}
+#div3 {
+  width: 100px;
+  height: 15px;
+  padding: 0px;
+  border: 1px solid white;
+}
+#div4 {
+  width: 100px;
+  height: 15px;
+  padding: 0px;
+  border: 1px solid white;
+}	
+	
+	</style>
+  </head>
+
+  <body >
+  
+  <img id="img" src="Mass_Dashpot/ULmassd/0.jpg "/>
+  <!--div for droppable divs-->
+  <div id= "weights" style="display:none;position:absolute;top:10px; left:0px">
+  <div id="div1" style="position:absolute;top:150px; left:210px" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" style="position:absolute;top:137px; left:210px" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+<div id="div3" style="position:absolute;top:122px; left:210px" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+<div id="div4" style="position:absolute;top:107px; left:210px" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+</div>
+
+<!--div for draggable weights-->
+<div id= "drop"    style="display:block;position:absolute;top:100px; left:600px; width:150px;height:200px">
+<p>Weights</p><p> (Each of 500g)</p>
+
+<img id="drag1"  src="img_weight0.5.png"   draggable="true" ondragstart="drag(event)" width="100" height="15" onmouseover="showweights()" onmouseout="hideweights()"><br>
+<img id="drag2"  src="img_weight1.png" draggable="true" ondragstart="drag(event)" width="100" height="15" onmouseover="showweights()" onmouseout="hideweights()"><br>
+<img id="drag3"  src="img_weight1.5.png" draggable="true" ondragstart="drag(event)" width="100" height="15" onmouseover="showweights()" onmouseout="hideweights()"><br>
+<img id="drag4"  src="img_weight2.png" draggable="true" ondragstart="drag(event)" width="100" height="15" onmouseover="showweights()" onmouseout="hideweights()">
+
+</div>
+
+
+
+
+
+<!------ Dropdown Hover---------------------->
+	<div class="dropdown" style="position:absolute;top:70px;right:50px;width:500px;height:200px ">
+  <p style="color:#B3061D"><b>INSTRUCTIONS</b></p>
+  <div class="dropdown-content" style="color:#025167">
+  <ol type="1">
+  <li>Drag weights(brown coloured boxes)and drop them in the white line boxes in the mass carriage system(for ex. Drag the uppermost weight and put it in the lowermost white box).Each of the weights are of 500g.First drag all the weights (i.e. select 2kg mass).</li></br>
+  
+  <li>Click on 'Trajectory' from command tab under 'Controls',then click on step.After that click on 'Setup', put step size to zero,set dwell time to 3000 ms and 1 repeatation .Select 'Open loop step' and 'Ok' to observe open loop step response for 2kg mass.</li><br/>
+ 
+ <li> Click on "Setup Data Aquisition" under 'Data' tab, put 2 as the value of servo cycles .</li></br>
+
+  <li>Drag the mass carriage system through the slider upto -2.5cm. </li><br/> 
+
+<li>Click on 'Execute' under 'command',then click on 'RUN' button.The system starts to oscillate.</li><br/>
+
+<li>After the carriage stops oscillating,an alert massage will be shown.Click on 'Ok'.</li></br>
+
+<li>Click on 'Set up Plot' under 'Plotting'. Select 'Encoder Position' and click 'ok'</li>    </br>
+
+<li> Click on 'Plot data' under 'Plotting' ,the 'Open loop step' response for the particuler mass chosen will be shown.</li></br>
+ 
+<li>Click on 'Reset Controller' under 'Utility' tab to observe response for unloaded mass choosing no weights and following the above steps.</li><br/>
+<li>Under 'Calculation' tab select 'Without Damper',enter both the mass values chosen(for ex. here the first mass was 2kg and second one is 0kg) and click on 'Simulate' to have the values of Mc(weight of the carriage) and K(spring constant).</li><br/>
+
+ <li>Now click on 'Connect Dashpot' button to connect the dashpot to our mass carriage system.</li><br/>
+ 
+ <li>Similerly drag 2kg weight again and follow the above steps to observe open loop step response of the mass carriage system with connected dashpot.</li><br/>
+ 
+ <li>Under 'Calculation' tab select 'With Damper',enter the mass value chosen(for ex. here the mass was 2kg) and click on 'Simulate' to have the value of C(Dashpot damping coefficient).</li><br/>
+ 
+ <li> To observe system velocity first remove dashpot from the mass carriage system by clicking on 'remove dashpot' button. Now secure 2kg mass in the carriage.</li><br/>
+ 
+ <li>Steps will be same, as said before with some following edits. In step 2 set dwell Time to 75 ms and repeatation 2 and in step 4 Drag the mass carriage system through the slider upto -3cm.   </li>
+ </br>
+ <li>In step 7 Select 'Encoder Velocity' and click 'ok'</li><br/>
+ 
+ <li>Calculate acceleration (for both positive & negative slope) using formula (velocity difference/ time difference).</li><br/>
+ 
+ <li> Under 'Calculation'tab select 'Gain Calculation'.Enter the acceleration values from positive slope and negative slope of velocity vs. time plot. Click on 'Simulate'.
+ 
+  </ol>	
+  </div>
+  </div>
+
+
+<!--<p style="position:relative;top:-205px; left:600px">Weights of each 500g</p>-->
+
+   <input id="valR" type="range" min="-3" max="3" value="0" step="0.5" style="display:none" oninput="showVal1(this.value)" onchange="showVal1(this.value)" onmouseover="hover(this.value)" />
+   <input id="valR2" type="range" min="-3" max="3" value="0" step="0.5"  style="display:block" oninput="showVal2(this.value)" onchange="showVal2(this.value)" onmouseover="hover(this.value)" />
+   <input id="valR3" type="range" min="-3" max="3" value="0" step="0.5"  style="display:none" oninput="showVal3(this.value)" onchange="showVal3(this.value)" onmouseover="hover(this.value)" />
+   <input id="valR4" type="range" min="-3" max="3" value="0" step="0.5"  style="display:none" oninput="showVal4(this.value)" onchange="showVal4(this.value)" onmouseover="hover(this.value)" />
+   <input id="valR5" type="range" min="-3" max="3" value="0" step="0.5"  style="display:none" oninput="showVal5(this.value)" onchange="showVal5(this.value)" onmouseover="hover(this.value)" />
+   <!--<input id="valR3" type="range" min="-3" max="3" value="0" step="0.5"  style="display:none" oninput="showVal1(this.value)" onchange="showVal1(this.value)" onmouseover="hover(this.value)" /> -->
+	<span id="range" style="display:block">0</span>
+	 <!--<input type="text" id="sv" value="0" readonly=readonly>-->
+    
+<!--<div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
+                <div class="littledot" id="ld1"></div>
+                <div class="littledot" id="ld2"></div>
+               
+				
+            </div>-->
+
+
+	
+	<h2 style="text-align:center; position:relative; top:-350px; left:100px;"><b>Controls</b></h2>
+	<div style="text-align:center; position:relative; top:-350px; left:850px; width:450px; height:250px; margin-top:auto; border: 3px solid blue; border-radius: 10px;">    
+  
+	<p style="background-color:powderblue; text-align:center; font-size:20px; color:black;width:350px;  background-border:black; position:relative; top:45px; left:1px">Apparatus:Linear inertia Model 210</p>
+	<p style="background-color:powderblue; text-align:center; font-size:20px; color:black;width:350px;  background-border:black;  position:relative; top:65px; left:1px">Encoder Position counts:</p>
+	<p style="background-color:powderblue; text-align:center; font-size:20px; color:black;width:350px;  background-border:black ; position:relative; top:85px; left:1px">Control Loop Status:</p>
+	<p id="status" style="position:absolute;top:175px;left:280px;">CLOSED</p>
+	<input id="slider" type="number" min="0000" max="6000" value="0000" style="background-color:yellow; text-align:center;position:absolute;top:130px;left:280px; font-size:15px; color:black; width:50px; border:black" >
+	
+	<p style="position:relative; top:65px" >Ts is set as 0.00442</p>
+	
+	
+	<div class="dropdown" style="text-align:center; position:relative; top:-182px; left:-15px">
+  <button class="dropbtn" id="file" >File</button>
+  <div class="dropdown-content">
+    <a href="#">Load Settings</a>
+    <a href="#">Save Settings</a>
+	<a href="#">About</a>
+	<a href="#">Exit</a>
+	</div>	
+	</div>	
+	
+	
+	
+	<div class="dropdown" style="text-align:center; position:relative; top:-182px; left:-10px">
+  <button class="dropbtn" id="setup" >Set Up</button>
+  <div class="dropdown-content">
+    <a href="#">Control Algorithm</a>
+    <a href="#">User units</a>
+	<a href="#">Communications</a>
+	</div>	
+	</div>
+	
+<div class="dropdown" style="text-align:center; position:relative; top:-182px; left:-5px">
+  <button class="dropbtn" id="command" >Command</button>
+  <div class="dropdown-content">
+    <a onclick="TBOX()">Trajectory</a>
+    <a onclick="EBOX()">Execute</a>
+	</div>	
+	</div>
+	
+	<div class="dropdown" style="text-align:center; position:relative; top:-182px; left:0px">
+  <button class="dropbtn" id="data" >Data</button>
+  <div class="dropdown-content">
+    <a onclick="DBOX()">Set up Data Aquisition</a>
+    
+	</div>	
+	</div>
+	
+	<div class="dropdown" style="text-align:center; position:relative; top:-182px; left:5px">
+  <button class="dropbtn" id="plot" >Plotting</button>
+  <div class="dropdown-content">
+    <a onclick="plotsetup()"id="graphsetup">Set-up Plot</a>
+    <a onclick="graph()"id="graph">Plot Data</a>
+    
+	</div>	
+	</div>
+	
+	<div class="dropdown" style="text-align:center; position:relative; top:-182px; left:10px">
+  <button class="dropbtn" id="utility" >Utility</button>
+  <div class="dropdown-content">
+    <a href="#">Zero Position</a>
+	<a onclick="Resetcontroller()">Reset Controller</a>
+    
+	</div>	
+	</div>		
+	</div>
+	
+	<div id="Plot Configuration" style="display:none;  position:relative; top:-200px; left:870px; width:450px; height:300px; margin-top:auto; border: 10px solid blue; border-radius: 10px;padding-top:3px;">
+<p style="text-align:center"><b>Plot Configuration</b></p>
+<p style="position:absolute;left:30px"><b>Selection</b></p></br></br></br>
+<input id="position" type="radio" name='plotting'value='position'>Encoder Position<br>
+<!--<input id="velocity" type="radio" name='plotting'value='velocity'>Encoder Velocity<br>-->
+<input  type="button" onclick="stopplot()" value="OK" style="display:block ; position:absolute; top:100px;left:300px; background-color:#FE4080; width:130px; height:50px; font-size:20px;"><br>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<div id="Trajectory Configuration" style="display:none;  position:relative; top:-200px; left:870px; width:450px; height:300px; margin-top:auto; border: 10px solid blue; border-radius: 10px;padding-top:3px;">
+<p style="text-align:center"><b>Trajectory Configuration</b></p>
+<p style="position:absolute;left:30px"><b>Selection</b></p></br></br></br>
+<input id="step" type="radio" name='signal'value='step'>Step<br>
+<!--<input id="olstep" name="control"type="radio" value="openloopstep" label="open loop step" style="display:none"><p id='olradioname'style="display:none; position:relative; top:-30px; left:20px">open loop step</p>-->
+<input id="ramp" type="radio" name='signal'value='ramp'disabled='true'>Ramp<br>
+<input id="para" type="radio" name='signal'value='parabolic'disabled='true'>Parabolic<br>
+<input id="cubic" type="radio" name='signal'value='cubic'disabled='true'>Cubic<br>
+
+<!--<input id="sine" type="radio" name='signal'value='sinusoidal'>Sinusoidal<br>
+<input id="sw"   type="radio" name='signal'value='sine sweep'>Sine Sweep<br>
+<input id="user" type="radio" name='signal'value='other'>User Defined<br>
+<input type="button" id="stepok" onclick="stopstep()" value="ok" style="display:none;position:relative; top:-20px; left:100px; background-color:#ffff99  ;width:100px; height:50px; font-size:20px;color:green">-->
+<input id="t1" type="button" onclick="stepcon()" value="Setup" style="display: ; position:absolute; top:100px;left:300px; background-color:#FE4080; width:130px; height:50px; font-size:20px;"><br>
+</div>
+
+	
+<div id="Step Configuration" style="display:none;  position:relative; top:-600px; left:1420px; width:350px; height:300px; margin-top:auto; border: 10px solid blue; border-radius: 10px;padding-top:3px;">
+	<p>Configure Step Trajectory</p></br>
+	&nbsp; <input type="number" value="0.0" readonly=readonly>Step Size (Volts)<br></br>
+	&nbsp; <input type="number" id="dt" value="3000" min="1000" max="3000" step="1000">Dwell Time(msec)<br></br>
+	&nbsp; <input type="number" id="rep" value="1" min="1" max="3">Number of reps<br></br>
+	<input id="clstep" name="control"type="radio" value="closedloopstep"disabled='true'>Closed loop step<br><br/>
+	<input id="olstep" name="control"type="radio" value="openloopstep"><p id='olradioname'style=" position:absolute; top:210px; left:20px">Open loop step</p>
+	<input type="button" onclick="stopstep()" value="ok" style="position:absolute; top:190px; left:160px; background-color:#ffff99  ;width:100px; height:50px; font-size:20px;color:green">
+	</div>
+	
+	<div id="dataAquisition" style="display:none;  position:relative; top:-300px; left:1420px; width:350px; height:300px; margin-top:auto; border: 10px solid blue; border-radius: 10px;padding-top:3px;">
+	 <p style="text-align:center">Setup Data Aquisition</p>
+	&nbsp;&nbsp; &nbsp;&nbsp; <p> Selected items:
+	&nbsp; &nbsp;&nbsp;&nbsp; <p>Encoder Position</p><br>
+	&nbsp; &nbsp;<input type="number"  id="servo" min="1" max="10" value="2" >Sample Period(servo Cycle):</br>
+	<input type="button" onclick="stopdata()" value="ok" style="position:relative; top:-80px; left:160px; background-color:#ffff99  ;width:100px; height:50px; font-size:20px;color:green">
+	</div>
+		
+	<!--<div id= "anim">
+	<img id="img1" src="mass/0.jpg " style="display:none;position:relative; top:-660px; left:-480px;" />
+	</div>-->
+	
+<div id="Execute" style="display:none;  position:relative; top:-300px; left:1420px; width:300px; height:200px; margin-top:auto; border: 10px solid blue; border-radius: 10px;padding-top:3px;">
+<p style="text-align:center">Selected trajectory:</p></br>
+<p style="text-align:left;color:blue;">Open loop Step</p><br>
+<input type="button" id="run2kg"onclick="RunAnim()" value="RUN" style="display:none;position:absolute; top:80px; left:160px; background-color:#ffff99  ;width:60px; height:50px; font-size:20px;color:green"><br><br>
+<input type="button" id="run0kg"onclick="RunAnim2()" value="RUN" style="display:block;position:absolute; top:80px; left:160px; background-color:#ffff99  ;width:60px; height:50px; font-size:20px;color:green"><br><br>
+<input type="button" id="run0.5kg"onclick="RunAnim3()" value="RUN" style="display:none;position:absolute; top:80px; left:160px; background-color:#ffff99  ;width:60px; height:50px; font-size:20px;color:green"><br><br>
+<input type="button" id="run1kg"onclick="RunAnim4()" value="RUN" style="display:none;position:absolute; top:80px; left:160px; background-color:#ffff99  ;width:60px; height:50px; font-size:20px;color:green"><br><br>
+<input type="button" id="run1.5kg"onclick="RunAnim5()" value="RUN" style="display:none;position:absolute; top:80px; left:160px; background-color:#ffff99  ;width:60px; height:50px; font-size:20px;color:green"><br><br>
+
+<input type="button" onclick="CancelRun()" value="Cancel" style="position:absolute; top:-80px; left:60px; background-color:#ffff99  ;width:100px; height:50px; font-size:20px;color:red">
+</div>
+	
+	<div id="chartContainer" style="display:block; position:absolute; top:500px; left:40px; height: 300px; width: 40%;"></div>
+	<button id="exportPositionChart" class="custombutton" style="display:none;position:absolute; top:470px; left:650px;">Download Plot</button>	
+   	<button id="exportVelocityChart" class="custombutton" style="display:none;position:absolute; top:470px; left:650px;">Download Plot</button>	
+	<div id="chartContainer2" style="display:block; position:absolute; top:500px; left:40px; height: 300px; width: 40%;"> </div>		
+    <!--<div id="chartContainer3" style="display:block; position:absolute; top:500px; left:40px; height: 300px; width: 40%;"> </div>	-->
+		 
+	<input type="button" id="hideplot" onclick="hideplot()" value="ok" style="display:none;position:relative; top:-30px; left:380px; background-color:#ffff99  ;width:100px; height:50px; font-size:20px;color:green">
+	  
+	  <p style="position:absolute; top:380px; left:770px"> Choose Mass(kg):</p></br>
+  <select name="MASS(Kg)" id="MASS(kg)" onclick="imchange(this)"    style="cursor:pointer; background-color:#85D2EE; position:absolute; top:380px;  left:880px; width:100px">
+  <option id="0"  value="1" SELECTED>0</option><option id="0.5"  value="2">0.5</option><option id="1"  value="3">1</option><option id="1.5"  value="4">1.5</option><option id="2"  value="5" >2</option></select>
+	
+  <div class="dropdown" style="text-align:center; position:absolute; top:380px; left:1000px ">
+  <button class="dropbtn" id="calbutton" style="background-color:#ff3333;" >Calculations</button>
+   <div class="dropdown-content">
+  <a disabled=true>Without Damper</a>
+  <a onclick="show_DBox()">With Damper</a>
+  </div>
+  </div> 
+  
+   <button id="cutdashpot" class="custombutton" style="background-color:#ff3333;position:absolute;top:380px;right:650px;" onclick="removeDashpot()" >Remove Dashpot</button>
+  
+  
+  
+  <div id="DBox" style="display:none;  position:relative; top:-300px; left:1420px; width:430px; height:415px; margin-top:auto; border: 10px solid #008fb3; border-radius: 10px;padding-top:10px;padding-left:10px; background-color:#ffffb3">
+  <h2 style="font-size:17px">Calculation for dashpot damping(damping Coefficient C) </h2>
+  <input type="number" id="mass" min="0" step="0.5" max="2" value="0.5" >choose mass<br/><br><br/><br/>
+  
+<!--<input type="number" id="TP1" value="0" readonly="readonly">Time Period for mass1:<br><br>
+  <input type="number" id="TP2" value="0"readonly="readonly">Time Period for mass2:<br><br>
+  <input type="number" id="MC" value="0" readonly="readonly">Value of Mass carriage(M<sub>c</sub>):<br><br>
+  <input type="number" id="K" value="0" readonly="readonly">Value of Spring Constant(K)<br><br>
+  <input type="number" id="wn1" value="0" readonly="readonly">Value of W<sub>n</sub>1 in rad/sec<br><br>-->
+  <input type="number" id="wn" value="0" readonly="readonly">Value of W<sub>n</sub> in rad/sec<br><br>
+  <input type="number" id="zeta" value="0" readonly="readonly">Damping ratio(ζ)<br/><br>
+  <input type="number" id="C" value="0" readonly="readonly">Damping Coefficient(C)<br/>
+  <button   onclick="Simulate2() " style="text-align:center; cursor: pointer; background-color:#44cc00;border-radius:20px; width:130px; height:50px; font-size:20px; position:absolute; top:75px; right:100px;border-shadow:2px">Simulate
+  <button   onclick="hide_DBox()" style="text-align:center; cursor: pointer; background-color:#66c2ff;border-radius:20px; width:70px; height:50px; font-size:20px; position:absolute; top:75px; right:10px;border-shadow:2px">OK
+  
+  </div>
+	
+
+	
+	
+  </body>
+<script  src="Recti_dashpot.js">   </script>
+  
+</html>

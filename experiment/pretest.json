@@ -1,0 +1,135 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "When acceleration is _______, velocity of a particle is constant.",
+      "answers": {
+        "a": "zero",
+        "b": "maximum",
+        "c": "None of the above",
+        "d": "All of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In a closed loop control system with positive value of feedback gain, the overall gain of the system will___",
+      "answers": {
+        "a": " decrease",
+        "b": "increase",
+        "c": "be unaffected",
+        "d": "None of these"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A simple Mass Spring Damper System having natural frequency &omega;<sub>n</sub>. If the spring stiffness is halved and mass is doubled, what will be its natural frequency?",
+      "answers": {
+        "a": "2&omega;<sub>n</sub>",
+        "b": "&omega;<sub>n</sub>/2",
+        "c": "4&omega;<sub>n</sub>",
+        "d": "8&omega;<sub>n</sub>"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "A block whose mass is 4kg is fastened with a spring constant k=64N/m. The block is pulled from its equilibrium position on a frictionless surface and released. The period of the resulting motion in seconds is___",
+      "answers": {
+        "a": "&#960;/2",
+        "b": "2&#960;",
+        "c": "&#960;/4",
+        "d": "&#960;"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The natural frequency of a mass spring damper system is w<sub>n</sub>. The natural frequency of this system in the moon will be__",
+      "answers": {
+        "a": "0.408&omega;<sub>n</sub>",
+        "b": "0.204&omega;<sub>n</sub>",
+        "c": "1.167&omega;<sub>n</sub>",
+        "d": "&omega;<sub>n</sub>"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "The time period of a mass spring damper system depends on,",
+      "answers": {
+        "a": "Mass of the block",
+        "b": "Spring Constant",
+        "c": "Both a and b",
+        "d": "None of the above"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },	
+	
+	{
+      "question": "The time period of a mass, suspended from a spring is 'T'. If the spring is cut into 4 equal parts and same mass is suspended from one of the parts, then the new time period will be,",
+      "answers": {
+        "a": "T",
+        "b": "2T",
+        "c": "T/4",
+        "d": "T/2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "When a system is vibrating in a normal mode,",
+      "answers": {
+        "a": "All masses move with the same Amplitude and same Frequency",
+        "b": "All masses move with the same Amplitude and different Frequency",
+        "c": "All masses move with different Frequency but of same phase",
+        "d": "All masses move with the same frequency and maintain a fixed phase relation"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	
+	{
+      "question": "A mass of 0.5 kg is suspended in a vertical plane by a spring having a stiffness coefficient of 300 N/m. The mass is displaced vertically downward from its static equilibrium position through a distance of 0.01m . Find the natural frequency of the system.",
+      "answers": {
+        "a": "24.5Hz",
+        "b": "31.6Hz",
+        "c": "5.1Hz ",
+        "d": "3.9Hz"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "The natural frequency of a single degree of freedom system decreases when the mass",
+      "answers": {
+        "a": "Increases",
+        "b": "Decreases",
+		"c": "Does not have any effect",
+        "d": "None of the above"
+		
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "For an under damped system, the damping ratio is",
+      "answers": {
+        "a": "Less than one",
+        "b": "Greater than one",
+		"c": "Equal to one",
+        "d": "None of the above"
+		
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+	
+  ]
+}
+
