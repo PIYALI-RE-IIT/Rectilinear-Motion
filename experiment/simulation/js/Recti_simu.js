@@ -568,7 +568,7 @@ function RunAnim(){
 	
 document.getElementById("img").style.display="block";
 slide('img',arr);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 5500);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  "samples collected"); }, 5500);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -589,7 +589,7 @@ function RunAnim2(){
 	
 document.getElementById("img").style.display="block";
 slide2('img',arr2);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 5500);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 5500);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -612,7 +612,7 @@ function RunAnim3(){
 	
 document.getElementById("img").style.display="block";
 slide3('img',arr3);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 5500);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 5500);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -635,7 +635,7 @@ function RunAnim4(){
 	
 document.getElementById("img").style.display="block";
 slide4('img',arr4);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 5500);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 5500);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -659,7 +659,7 @@ function RunAnim5(){
 	
 document.getElementById("img").style.display="block";
 slide5('img',arr5);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 5500);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 5500);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -689,7 +689,7 @@ var ipvalue = parseFloat(Math.abs(Number(document.getElementById('range').innerH
 	  var M= parseFloat(document.getElementById("MASS(kg)").options[i].innerHTML);//value.innerHTML);
 	  var mc = 0.77;
 	  var TM =parseFloat(M+mc);// parseFloat(2.866);//+(M+mc).toFixed(2);
-	  alert(TM);
+	  //alert(TM);
 	  var c = parseFloat(2.1);//zeta value 0.05
 	  var c2 =parseFloat(Math.pow(c,2));
 	  var k = 390; var fk =parseFloat(1/k);
@@ -891,13 +891,13 @@ var ipvalue = parseFloat(Math.abs(Number(document.getElementById('range').innerH
         title: "Time(Sec)"
       },
 	  axisY: {
-            title: "Velocity Curves",
+            title: "Velocity ( Encoder counts )",
 			
 			//maximum:0.0018,
         },
       data: [
       {        
-        type: "line",
+        type: "spline",
 		color:"black",
         dataPoints:dataPoints
 		
@@ -1040,8 +1040,8 @@ document.getElementById('GainBox').style.display="none";
 
 function SimulateGain(){
 	
-var ac1 = parseFloat(document.getElementById('ac1').value);
-var ac2 = parseFloat(document.getElementById('ac2').value);	
+var ac1 = Math.abs(parseFloat(document.getElementById('ac1').value));
+var ac2 = Math.abs(parseFloat(document.getElementById('ac2').value));	
 	
 	var acavg = parseFloat((ac1+ac2)/2);
 	
@@ -1050,7 +1050,7 @@ var ac2 = parseFloat(document.getElementById('ac2').value);
 	
 	var mfactor= parseFloat(parseFloat(2.086* acavg)/2);
 	
-	var khw = parseFloat(mfactor *kc *ks);
+	var khw = Math.abs(parseFloat(mfactor *kc));
 	
 	document.getElementById('acavg').value= acavg;
 	document.getElementById('hwgain').value = khw;

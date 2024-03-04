@@ -1,19 +1,9 @@
 {
   "version": 2.0,
   "questions": [
+    
     {
-      "question": "A Mass-Spring-Damper system having force as input and displacement of the mass as output having transfer function: G(s) = 1/( s<sup>2</sup> +24s +900 )  . A force input F (t) =10 sin (70t) is applied at time t=0 s. A beam from an optical stroboscope is focused on the mass .In steady-state the strobe frequency in hertz at which the mass appears to be stationary is,",
-      "answers": {
-        "a": "5/&#960;",
-        "b": "35/&#960;",
-        "c": "15/&#960;",
-        "d": "50/&#960;"
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "The equation of free vibration of a system is   d<sup>2</sup>x/dt<sup>2</sup> +64π<sup>2</sup>x = 0, its natural frequency would be,",
+      "question": "1. The equation of free vibration of a system is   d<sup>2</sup>x/dt<sup>2</sup> +64π<sup>2</sup>x = 0, its natural frequency would be,",
       "answers": {
         "a": "4 &pi; Hz ",
         "b": "4 Hz",
@@ -24,7 +14,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The equation of motion of a spring mass damper system is    d<sup>2</sup>x)/dt<sup>2</sup> + 3 dx/dt + 9kx = 10 sin⁡(5t). The damping factor for the system is,",
+      "question": "2. The equation of motion of a spring mass damper system is    d<sup>2</sup>x/dt<sup>2</sup> + 3 dx/dt + 9kx = 10 sin⁡(5t). The damping factor for the system is,",
       "answers": {
         "a": "0.25 ",
         "b": "2 ",
@@ -35,7 +25,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A vehicle suspension system consists of a spring and damper. The stiffness of the spring is 3.6 kN/m and the damping constant of the damper is 400 Ns/m. If the mass value is 50 kg, then the value of damping factor &#950; and damped natural frequency (f<sub>d</sub>) are,",
+      "question": "3. A vehicle suspension system consists of a spring and damper. The stiffness of the spring is 3.6 kN/m and the damping constant of the damper is 400 Ns/m. If the mass value is 50 kg, then the value of damping factor &#950; and damped natural frequency (f<sub>d</sub>) are,",
       "answers": {
         "a": "0.471, 1.19 Hz",
         "b": " 0.666, 1.35 Hz  ",
@@ -46,7 +36,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "In an oscillating mass-spring system, the velocity of the mass is greatest when the mass is,",
+      "question": "4. In an oscillating mass-spring system, the velocity of the mass is greatest when the mass is,",
       "answers": {
         "a": " at the equilibrium point ",
         "b": "at the point of maximum displacement",
@@ -58,7 +48,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "An object attached to an ideal spring executes simple harmonic motion. If you want to double its total energy, you could",
+      "question": "5. An object attached to an ideal spring executes simple harmonic motion. If its total energy needs to be doubled, we need to",
       "answers": {
         "a": "  double the force constant (spring constant) of the spring ",
         "b": " double the amplitude of vibration",
@@ -69,18 +59,18 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A mass 'm' is attached to a light spring oscillates with a period of 2 seconds. If the mass is increased by 2 kgs, the period is increased by 1 seconds , the value of mass is,",
+      "question": "6. A mass 'm' is attached to a spring oscillates with a period of 2 seconds. If the mass is increased by 2 kgs, the period is increased by 1 seconds , the value of mass is,",
       "answers": {
-        "a": "1.6kg ",
-        "b": "2.1kg",
-        "c": "0.9kg",
-        "d": "2.7kg"
+        "a": "1.6 kg ",
+        "b": "2.1 kg",
+        "c": "0.9 kg",
+        "d": "2.7 kg"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "A vibrating system consists of a mass of 200kg and a spring stiffness of 80N/mm, the natural frequency of vibration of the system is,",
+      "question": "7. A vibrating system consists of a mass of 200kg and a spring stiffness of 80 N/m, the natural frequency of vibration of the system is,",
       "answers": {
         "a": "20 rad/s ",
         "b": "40 rad/s",
@@ -91,7 +81,7 @@
       "difficulty": "beginner"
     }, 
     {
-      "question": "A block whose mass is 4kg, is fastened to a spring of spring constant 64 N/m. The block is pulled from its equilibrium position in a frictionless surface and released, the period of resulting motion in seconds is,",
+      "question": "8. A block whose mass is 4kg, is fastened to a spring of spring constant 64 N/m. The block is pulled from its equilibrium position in a frictionless surface and released, the period of resulting motion in seconds is,",
       "answers": {
         "a": " &#960;/2 ",
         "b": "&#960;/4",
@@ -103,7 +93,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A particle attached to a vertical spring and pulled down to 0.01m below its mean position and released , its initial acceleration is 0.16m/s<sup>2</sup>, the time period in seconds will be, ",
+      "question": "9. A particle attached to a vertical spring and pulled down to 0.01 m below its mean position and released , its initial acceleration is 0.16 m/s<sup>2</sup>, the time period in seconds will be, ",
       "answers": {
         "a": " &#960;/2 ",
         "b": "&#960;/4",
@@ -115,7 +105,7 @@
     },
 	
 	{
-      "question": "Stretching a spring increases its ______________ energy",
+      "question": "10. Stretching a spring increases its ______________ energy",
       "answers": {
         "a": " gravitational potential ",
         "b": "mechanical kinetic",
@@ -127,7 +117,7 @@
     },
 	
 	{
-      "question": "Frequency of a spring is 'n' after suspending mass 'M'. Now after suspending mass '4M' the frequency will be, ",
+      "question": "11. Frequency of a spring is 'n' after suspending mass 'M'. Now after suspending mass '4M' the frequency will be, ",
       "answers": {
         "a": " 2n ",
         "b": "n/4",
@@ -139,7 +129,7 @@
     },
 	
 	{
-      "question": "The period of oscillation of a mass 'M' suspended from a spring of negligible mass is T, if along with it another mass M is also suspended, the period of oscillation will now be ",
+      "question": "12. The period of oscillation of a mass 'M' suspended from a spring of negligible mass is T, if along with it another mass M is also suspended, the period of oscillation will now be ",
       "answers": {
         "a": " T ",
         "b": "T/6",

@@ -95,20 +95,20 @@ text-align:center;
 
             </div>
             <div class="col-md-6">
-                <p class="h1"> <b> Simulation </b> </p>
+                <p class="h1"> <b> Study of Rectilinear Motion </b> </p>
             </div>
             <div class="col-md-3">
 
             </div>
         </div>
         <hr>
-        <!--<div class="d-flex p-1 text-primary">
-          <div class="p-1" > <p class="h4"><a href="../index.html"> <span class="LN"> <b> Control and Instrumentation Lab </b></span> -- </a></p></div>
+        <div class="d-flex p-1 text-primary">
+          <div class="p-1" > <p class="h4"><a href="../index.html"> <span class="LN"> <b> Control and Instrumentation Lab </b></span> --> </a></p></div>
           <div class="p-1"> <p class="h4"><a href="./index.html"> <span class="ExpN"> <b> Study of Rectilinear Motion </b> </span> </a></p></div>
-        </div>-->
+        </div>
     </div>
     
-    <!--<div class="container p-3 my-5 text-primary text-center border">
+    <div class="container p-3 my-5 text-primary text-center border">
         <div class="row">
 
             <ul class="nav nav-pills nav-justified">
@@ -142,7 +142,7 @@ text-align:center;
 
               </ul>
         </div>
-    </div>-->
+    </div>
 	
     <div class="container p-3 my-5 text-left border">
       <div class="row">
@@ -150,46 +150,47 @@ text-align:center;
         <div class="col-md-10">
             <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
               <div id="inst" style="display:block;height:200px;overflow-y:auto;">
-                <ol>
+					<ol>
                 
-                  <li>Drag weights (brown coloured boxes) and drop them in the blue coloured boxes in the mass carriage system (for ex. Drag the uppermost weight and put it in the lowermost blue box). Each of the weights are of 500g. First drag all the weights (i.e. select 2kg mass).</li></br>
-                  
-                  <li>Click on 'Trajectory' from command tab under 'Controls',then click on 'Step'. After that click on 'Setup', put step size to zero, set dwell time to 3000 ms and 2 repetition . Select 'Open loop step' and 'Ok' to observe open loop step response for 2kg mass.</li><br/>
-                 
-                 <li> Click on "Setup Data Acquisition" under 'Data' tab, put 2 as the value of servo cycles and select 'Encoder Position'  .</li></br>
-  
-                  <li>Drag the mass carriage system through the slider up to -2.5cm. </li><br/> 
-  
-                <li>Click on 'Execute' under 'command', then click on 'RUN' button. The system starts to oscillate.</li><br/>
-  
-                <li>After the carriage stops oscillating, an alert massage will be shown. Click on 'Ok'.</li></br>
-  
-                <li>Click on 'Set up Plot' under 'Plotting'. Select 'Encoder Position' and click 'Ok'</li>    </br>
-  
-                <li> Click on 'Plot data' under 'Plotting' ,the 'Open loop step' response for the particular mass chosen, will be shown.</li></br>
-                 
-                <li>Click on 'Reset Controller' under 'Utility' tab to observe response for unloaded mass choosing no weights and following the steps 2 - 8.</li><br/>
-                
-                <li>Under 'Calculation' tab select 'Without Damper', enter both the mass values chosen ( for ex. here the first mass was 2kg and second one is 0kg ) and click on 'Simulate' button to have the values of M<sub>c</sub> (weight of the carriage) and K (spring constant).</li><br/>
-  
-                 <li>Now click on 'Connect Dashpot' button to connect the dashpot to the mass carriage system.</li><br/>
-                 
-                 <li>Similarly drag 2kg weight again and follow the above steps( 1 - 8 ) to observe open loop step response of the mass carriage system with connected dashpot.
-                 </li><br/>
-                 
-                 <li>Under 'Calculation' tab select 'With Damper', enter the mass value chosen ( for ex. here the mass was 2kg ) and click on 'Simulate' button to have the value of C ( dashpot damping coefficient ).</li><br/>
-                 
-                 <li> To observe system velocity first remove dashpot from the mass carriage system by clicking on 'Remove Dashpot' button. Now secure 2kg mass in the carriage.</li><br/>
-                 
-                 <li>Steps will be same, as said before in steps ( 1-8 ) with some following edits. In step 2 set dwell Time to 75 ms and repetition 2 and in step 3 select 'Encoder Velocity'. <!--step 4 Drag the mass carriage system through the slider up to -3cm.-->   </li>
-                 </br>
-                 <li>In step 7 Select 'Encoder Velocity' and click 'Ok'</li><br/>
-                 
-                 <li>Calculate acceleration (for both positive & negative slope) using formula (velocity difference/ time difference) from the velocity vs. time plot.</li><br/>
-                 
-                 <li> Under 'Calculation' tab select 'Gain Calculation'. Enter the acceleration values from positive slope and negative slope of velocity vs. time plot. Click on 'Simulate' button.
-   
-      </ol>
+							  <li>Drag weights (brown coloured boxes) and drop them in the blue coloured boxes in the mass carriage system (for ex. Drag the uppermost weight and put it in the lowermost blue box). Each of the weights are of 500 g. First drag all the weights (i.e. select 2 kg mass).</li></br>
+							  
+							  <li> Under 'Controls' section click on 'Trajectory' under command tab, then click on 'Step'. After that click on 'Setup', put step size to zero, set dwell time to 3000 ms and 2 repetition . Select 'Open loop step' and 'Ok'.</li><br/>
+							 
+							 <li> Click on "Setup Data Acquisition" under 'Data' tab, put 2 as the value of servo cycles and select 'Encoder Position'.</li></br>
+
+							  <li>Drag the mass carriage system through the slider up to -2.5 cm. </li><br/> 
+
+							<li>Click on 'Execute' under 'command', then click on 'RUN' button. The system starts to oscillate.</li><br/>
+
+							<li>After the carriage stops oscillating, an alert massage will be shown. Click on 'Ok'.</li></br>
+
+							<li>Click on 'Set up Plot' under 'Plotting'. Select 'Encoder Position' and click 'Ok'</li>    </br>
+
+							<li> Click on 'Plot data' under 'Plotting' ,the 'Open loop step' response for the particular mass chosen, will be shown.</li></br>
+							 
+							<li>Click on 'Reset Controller' under 'Utility' tab to observe the response for unloaded mass by choosing no weights and following the steps 2 - 8.</li><br/>
+							
+							<li>Under 'Calculation' tab select 'Without Damper', enter both the mass values chosen ( for ex. here the first mass was 2 kg and second one is 0 kg ) and click on 'Simulate' to have the values of M<sub>c</sub> (mass of the carriage) and K (spring constant).</li><br/>
+
+							 <li>Now click on 'Connect Dashpot' button to connect the dashpot to the mass carriage system.</li><br/>
+							 
+							 <li>Similarly drag 2 kg weight again and follow the above steps( 2 - 8 ) to observe open loop step response of the mass carriage system with connected dashpot.
+							</li><br/>
+							 
+							 <li>Under 'Calculation' tab select 'With Damper', enter the mass value chosen ( for ex. here the mass was 2 kg ) and click on 'Simulate' to have the value of C ( dashpot damping coefficient ).</li><br/>
+							 
+							 <li> To observe system velocity first remove dashpot from the mass carriage system by clicking on 'Remove Dashpot' button. Now secure 2 kg mass in the carriage.</li><br/>
+							 
+							 <li>Steps will be same as in steps ( 2 - 8 ) with some following edits.<br/>
+							 i) In step 2 set dwell Time to 75 ms and repetition 3.<br/> 
+							 ii)In step 3 select 'Encoder Velocity'.<br/>
+							 iii)In step 7 Select 'Encoder Velocity' and click 'Ok'.<br/>
+							 
+							 <li>Calculate acceleration (for both positive & negative slope) using formula (velocity difference/ time difference) from the velocity vs. time plot.</li><br/>
+							 
+							 <li> Under 'Calculation' tab select 'Gain Calculation'. Enter the acceleration values from positive slope and negative slope of velocity vs. time plot. Click on 'Simulate'.</li><br/>
+ 
+  	</ol>
     </div>
 	</p> 
           </div>
@@ -290,7 +291,7 @@ text-align:center;
 	<!-------------------Button end-------------------------->
     
     <br><div class="w-auto p-2 my-1 text-center" style="background-color:powderblue; font-size:20px; color:black;border:1px dotted black;">Apparatus:Linear inertia Model 210</div>
-	<div class="w-auto p-2 my-1 text-center" style="background-color:powderblue;  font-size:20px; color:black;  border:1px dotted black;">Encoder Position counts: <input class="text-center" id="slider" type="number" min="0000" max="6000" value="0000" style="background-color:yellow;" ><br> </div>
+	<div class="w-auto p-2 my-1 text-center" style="background-color:powderblue;  font-size:20px; color:black;  border:1px dotted black;">Encoder Position counts: <input class="text-center" id="slider" type="number" min="0000" max="6000" value="0000" style="background-color:yellow; dotted black" ><br> </div>
 	<div class="w-auto p-2 my-1 " style="background-color:powderblue;  font-size:20px; color:black;  border:1px dotted black;">Control Loop Status: <span id="status">CLOSED </span></div>
 	
 	<p class= "text-center">Ts is set as 0.00442</p> 
@@ -378,23 +379,23 @@ text-align:center;
 
 <div class="w-auto p-2 my-1" id="WDBox" style="display:none;margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;background-color:#ffffb3">
   <h1 class="w-auto text-center"style="font-size:20px">Calculations for M<sub>c</sub> & K </h1>
-  <input class="w-auto text-center"type="number" id="mass1" min="0" step="0.5" max="2" value="0.5" >choose mass1<br/><br>
-  <input class="w-auto text-center"type="number" id="mass2" min="0" step="0.5" max="2" value="0.5" >choose mass2<br/><br>
-  <input class="w-auto text-center"type="number" id="MC" value="0" readonly="readonly">Value of Mass carriage(M<sub>c</sub>)(kg)<br><br>
-  <input class="w-auto text-center"type="number" id="K" value="0" readonly="readonly">Value of Spring Constant(K)(N/m)<br><br>
-  <input class="w-auto text-center"type="number" id="wn1" value="0" readonly="readonly">Value of W<sub>n</sub>1 in rad/sec<br><br>
-  <input class="w-auto text-center"type="number" id="wn2" value="0" readonly="readonly">Value of W<sub>n</sub>2 in rad/sec<br><br>
-  <input class="w-auto text-center"type="number" id="zeta" value="0" readonly="readonly">Average Value of damping ratio(ζ)(negligible)<br/><br/>
+  <input class="w-auto text-center"type="number" id="mass1" min="0" step="0.5" max="2" value="0.5" >&nbsp;choose mass1 ( kg )<br/><br>
+  <input class="w-auto text-center"type="number" id="mass2" min="0" step="0.5" max="2" value="0.5" >&nbsp;choose mass2<br/><br>
+  <input class="w-auto text-center"type="number" id="MC" value="0" readonly="readonly">&nbsp;Value of Mass carriage(M<sub>c</sub>)( kg )<br><br>
+  <input class="w-auto text-center"type="number" id="K" value="0" readonly="readonly">&nbsp;Value of Spring Constant(K)( N/m )<br><br>
+  <input class="w-auto text-center"type="number" id="wn1" value="0" readonly="readonly">Value of W<sub>n1</sub> in rad/sec<br><br>
+  <input class="w-auto text-center"type="number" id="wn2" value="0" readonly="readonly">Value of W<sub>n2</sub> in rad/sec<br><br>
+  <input class="w-auto text-center"type="number" id="zeta" value="0" readonly="readonly">Average Value of damping ratio(&zeta;)(negligible)<br/><br/>
   <button type="button" class="btn btn-primary"  onclick="Simulate1() ">Simulate</button>
   <button type="button" class="btn btn-primary"  onclick="hide_WDBox()" >OK</button>  
   </div>
 
 <div class="w-auto p-2 my-1"id="GainBox" style="display:none; margin-top:auto; border: 10px solid #0d6efd; border-radius: 10px;background-color:#ffffb3">
   <h1 class="w-auto text-center" style="font-size:20px">Calculations for Hardware Gain K<sub>hw</sub></h1>
-  <input class="w-auto text-center" type="number" id="ac1" min="0.0" step="0.5" value="0.0" >Enter Positive slope acceleration<br/><br>
-  <input class="w-auto text-center"type="number" id="ac2" min="0.0" step="0.5" value="0.0" >Enter Negative slope acceleration<br/><br>
-  <input class="w-auto text-center"type="number" id="acavg" value="0" readonly="readonly">Value of average acceleration:<br><br>
-  <input class="w-auto text-center"type="number" id="hwgain" value="0" readonly="readonly">Approximate Value of Hardware Gain(K <sub>hw</sub>)<br/><br/>
+  <input class="w-auto text-center" type="number" id="ac1" min="0.0" step="0.5" value="0.0" >&nbsp;Enter Positive slope acceleration<br/><br>
+  <input class="w-auto text-center"type="number" id="ac2" min="0.0" step="0.5" value="0.0" >&nbsp;Enter Negative slope acceleration<br/><br>
+  <input class="w-auto text-center"type="number" id="acavg" value="0" readonly="readonly">&nbsp;Value of average acceleration<br><br>
+  <input class="w-auto text-center"type="number" id="hwgain" value="0" readonly="readonly">&nbsp;Approximate Value of Hardware Gain(K <sub>hw</sub>)<br/><br/>
   <button type="button" class="btn btn-primary"  onclick="SimulateGain()">Simulate</button>
   <button type="button" class="btn btn-primary"  onclick="hideGain()">OK</button>  
   </div>

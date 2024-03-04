@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "When acceleration is _______, velocity of a particle is constant.",
+      "question": "1. When acceleration is _______, velocity of a particle is constant.",
       "answers": {
         "a": "zero",
         "b": "maximum",
@@ -13,7 +13,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "In a closed loop control system with positive value of feedback gain, the overall gain of the system will___",
+      "question": "2. In a closed loop control system with positive value of feedback gain, the overall gain of the system will___",
       "answers": {
         "a": " decrease",
         "b": "increase",
@@ -24,7 +24,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A simple Mass Spring Damper System having natural frequency &omega;<sub>n</sub>. If the spring stiffness is halved and mass is doubled, what will be its natural frequency?",
+      "question": "3. A simple mass spring damper system having natural frequency &omega;<sub>n</sub>. If the spring stiffness is halved and mass is doubled, what will be its natural frequency?",
       "answers": {
         "a": "2&omega;<sub>n</sub>",
         "b": "&omega;<sub>n</sub>/2",
@@ -35,7 +35,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A block whose mass is 4kg is fastened with a spring constant k=64N/m. The block is pulled from its equilibrium position on a frictionless surface and released. The period of the resulting motion in seconds is___",
+      "question": "4. A block whose mass is 4kg is fastened with a spring constant k = 64 N/m. The block is pulled from its equilibrium position on a frictionless surface and released. The period of the resulting motion in seconds is___",
       "answers": {
         "a": "&#960;/2",
         "b": "2&#960;",
@@ -46,18 +46,18 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The natural frequency of a mass spring damper system is w<sub>n</sub>. The natural frequency of this system in the moon will be__",
+      "question": "5. The natural frequency of a mass spring damper system is w<sub>n</sub>. The natural frequency of this system in the moon will be__",
       "answers": {
-        "a": "0.408&omega;<sub>n</sub>",
-        "b": "0.204&omega;<sub>n</sub>",
-        "c": "1.167&omega;<sub>n</sub>",
+        "a": "0.408 &omega;<sub>n</sub>",
+        "b": "0.204 &omega;<sub>n</sub>",
+        "c": "1.167 &omega;<sub>n</sub>",
         "d": "&omega;<sub>n</sub>"
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
     },
 	{
-      "question": "The time period of a mass spring damper system depends on,",
+      "question": "6. The time period of a mass spring damper system depends on,",
       "answers": {
         "a": "Mass of the block",
         "b": "Spring Constant",
@@ -69,7 +69,7 @@
     },	
 	
 	{
-      "question": "The time period of a mass, suspended from a spring is 'T'. If the spring is cut into 4 equal parts and same mass is suspended from one of the parts, then the new time period will be,",
+      "question": "7. The time period of a mass, suspended from a spring is 'T'. If the spring is cut into 4 equal parts and same mass is suspended from one of the parts, then the new time period will be,",
       "answers": {
         "a": "T",
         "b": "2T",
@@ -81,7 +81,7 @@
     },
 	
 	{
-      "question": "When a system is vibrating in a normal mode,",
+      "question": "8. When a system is vibrating in a normal mode,",
       "answers": {
         "a": "All masses move with the same Amplitude and same Frequency",
         "b": "All masses move with the same Amplitude and different Frequency",
@@ -94,7 +94,7 @@
 	
 	
 	{
-      "question": "A mass of 0.5 kg is suspended in a vertical plane by a spring having a stiffness coefficient of 300 N/m. The mass is displaced vertically downward from its static equilibrium position through a distance of 0.01m . Find the natural frequency of the system.",
+      "question": "9. A mass of 0.5 kg is suspended in a vertical plane by a spring having a stiffness coefficient of 300 N/m. The mass is displaced vertically downward from its static equilibrium position through a distance of 0.01 m . Find the natural frequency of the system.",
       "answers": {
         "a": "24.5Hz",
         "b": "31.6Hz",
@@ -106,23 +106,24 @@
     },
 	
 	{
-      "question": "The natural frequency of a single degree of freedom system decreases when the mass",
+      "question": "10. The natural frequency of a single degree of freedom system decreases when the mass ____",
       "answers": {
         "a": "Increases",
         "b": "Decreases",
-		"c": "Does not have any effect",
+		    "c": "Does not have any effect",
         "d": "None of the above"
 		
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
+	
 	{
-      "question": "For an under damped system, the damping ratio is",
+      "question": "11. For an under damped system, the damping ratio is",
       "answers": {
         "a": "Less than one",
         "b": "Greater than one",
-		"c": "Equal to one",
+		    "c": "Equal to one",
         "d": "None of the above"
 		
       },

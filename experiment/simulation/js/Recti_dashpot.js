@@ -562,7 +562,7 @@ function RunAnim(){
 	
 document.getElementById("img").style.display="block";
 slide('img',arr);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 4000);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 4000);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -583,7 +583,7 @@ function RunAnim2(){
 	
 document.getElementById("img").style.display="block";
 slide2('img',arr2);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 4000);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 4000);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -606,7 +606,7 @@ function RunAnim3(){
 	
 document.getElementById("img").style.display="block";
 slide3('img',arr3);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 4000);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 4000);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -629,7 +629,7 @@ function RunAnim4(){
 	
 document.getElementById("img").style.display="block";
 slide4('img',arr4);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 4000);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 4000);
 document.getElementById("Execute").style.display="none";
 
 }
@@ -653,7 +653,7 @@ function RunAnim5(){
 	
 document.getElementById("img").style.display="block";
 slide5('img',arr5);
-setTimeout(function(){ alert("Data uploaded successfully,check plot."  + samplecount +  "samples collected"); }, 4000);
+setTimeout(function(){ alert("Data uploaded successfully,check plot. "  + samplecount +  " samples collected"); }, 4000);
 document.getElementById("Execute").style.display="none";
 
 }
