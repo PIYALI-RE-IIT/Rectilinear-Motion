@@ -22,11 +22,11 @@ An encoder is a sensor that converts a positional output into an electronic sign
 <div align = "center">
 <img alt="" src="./images/plant.png" class="img-fluid">
 
-Fig 2: Schematic representation of the Rectilinear Motion setup in Control Systems without dashpot connected
+<b>Fig 2: Rectilinear Motion setup without dashpot connected</b>
 
 <img alt="" src="./images/plant2.png" class="img-fluid">
 
-Fig 3: Schematic representation of the Rectilinear Motion setup in Control Systems with dashpot connected
+<b>Fig 3: Rectilinear Motion setup with dashpot connected</b>
 
 <img alt="" src="./images/tfequation.png" class="img-fluid">
 

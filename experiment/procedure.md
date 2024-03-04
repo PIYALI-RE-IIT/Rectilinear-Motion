@@ -1,6 +1,4 @@
 ### Procedure
-
-**Plant Setup:**
 								
 <div align="center">
 <img  src="./images/scth.png" style="width:81%;height:30%">
@@ -42,9 +40,9 @@
 
 i) In step 2 set dwell Time to 75 ms and repetition 3.
 
-ii)In step 3 select 'Encoder Velocity'.
+ii) In step 3 select 'Encoder Velocity'.
 
-iii)In step 7 Select 'Encoder Velocity' and click 'Ok'.
+iii) In step 7 Select 'Encoder Velocity' and click 'Ok'.
 
 16. Calculate acceleration (for both positive & negative slope) using formula (velocity difference/ time difference) from the velocity vs. time plot.
 
