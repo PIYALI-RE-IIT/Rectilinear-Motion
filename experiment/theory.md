@@ -77,7 +77,7 @@ Where,
 </div>
 
 								
-The hardware gain, <i style ="font-family:'Bodoni MT';font-size:20px;">k<sub>hw</sub></i>,  of the system is comprised of the product: 
+The hardware gain, <i style ="font-family:'Bodoni MT';font-size:20px;">k<sub>hw</sub></i>,  of the system is comprised of the product 
 
 $$k_{hw} = k_c \ k_a \ k_t \ k_{mp} \ k_e \ k_{ep} \tag{7}$$
 
