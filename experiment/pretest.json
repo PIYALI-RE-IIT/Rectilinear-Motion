@@ -4,8 +4,8 @@
     {
       "question": "1. When acceleration is _______, velocity of a particle is constant.",
       "answers": {
-        "a": "zero",
-        "b": "maximum",
+        "a": "Zero",
+        "b": "Maximum",
         "c": "None of the above",
         "d": "All of the above"
       },
@@ -13,12 +13,12 @@
       "difficulty": "beginner"
     },
     {
-      "question": "2. In a closed loop control system with positive value of feedback gain, the overall gain of the system will___",
+      "question": "2. In a closed loop control system with positive value of feedback gain, the overall gain of the system will ___",
       "answers": {
-        "a": " decrease",
-        "b": "increase",
-        "c": "be unaffected",
-        "d": "None of these"
+        "a": "Decrease",
+        "b": "Increase",
+        "c": "Be unaffected",
+        "d": "None of the above"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
@@ -35,7 +35,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "4. A block whose mass is 4kg is fastened with a spring constant k = 64 N/m. The block is pulled from its equilibrium position on a frictionless surface and released. The period of the resulting motion in seconds is___",
+      "question": "4. A block whose mass is 4kg is fastened with a spring constant k = 64 N/m. The block is pulled from its equilibrium position on a frictionless surface and released. The period of the resulting motion in seconds is ___",
       "answers": {
         "a": "&#960;/2",
         "b": "2&#960;",
@@ -46,7 +46,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "5. The natural frequency of a mass spring damper system is w<sub>n</sub>. The natural frequency of this system in the moon will be__",
+      "question": "5. The natural frequency of a mass spring damper system is &omega;<sub>n</sub>. The natural frequency of this system in the moon will be __",
       "answers": {
         "a": "0.408 &omega;<sub>n</sub>",
         "b": "0.204 &omega;<sub>n</sub>",
@@ -57,11 +57,11 @@
       "difficulty": "beginner"
     },
 	{
-      "question": "6. The time period of a mass spring damper system depends on,",
+      "question": "6. The time period of a mass spring damper system depends on ____",
       "answers": {
         "a": "Mass of the block",
         "b": "Spring Constant",
-        "c": "Both a and b",
+        "c": "Both of the above",
         "d": "None of the above"
       },
       "correctAnswer": "c",
@@ -96,10 +96,10 @@
 	{
       "question": "9. A mass of 0.5 kg is suspended in a vertical plane by a spring having a stiffness coefficient of 300 N/m. The mass is displaced vertically downward from its static equilibrium position through a distance of 0.01 m . Find the natural frequency of the system.",
       "answers": {
-        "a": "24.5Hz",
-        "b": "31.6Hz",
-        "c": "5.1Hz ",
-        "d": "3.9Hz"
+        "a": "24.5 Hz",
+        "b": "31.6 Hz",
+        "c": "5.1 Hz ",
+        "d": "3.9 Hz"
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
@@ -110,7 +110,7 @@
       "answers": {
         "a": "Increases",
         "b": "Decreases",
-		    "c": "Does not have any effect",
+		"c": "Does not have any effect",
         "d": "None of the above"
 		
       },
@@ -123,7 +123,7 @@
       "answers": {
         "a": "Less than one",
         "b": "Greater than one",
-		    "c": "Equal to one",
+		"c": "Equal to one",
         "d": "None of the above"
 		
       },
@@ -133,4 +133,3 @@
 	
   ]
 }
-

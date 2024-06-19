@@ -750,16 +750,16 @@ function myFunction() {
     {
        
 	  title:{
-      text: "OpenLoop Step plot"
+      text: "OpenLoop Step Plot"
 	  
       },
 	  
 	  axisX:{
         interlacedColor: "#D9D9DA",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
 	  axisY: {
-            title: "Amplitude(Encoder position counts)",
+            title: "Amplitude (Encoder position counts)",
 			
 			//maximum:0.0018,
         },
@@ -857,13 +857,13 @@ var dataPoints=[];
     {
        
 	  title:{
-      text: "Velocity vs. Time plot"
+      text: "Velocity vs. Time Plot"
 	  
       },
 	  
 	  axisX:{
         interlacedColor: "#D9D9DA",
-        title: "Time(Sec)"
+        title: "Time(sec)"
       },
 	  axisY: {
             title: "Velocity Curves",
@@ -995,11 +995,18 @@ function drag(ev) {
 
 function drop(ev) {
 	 
-  ev.preventDefault();
+  /* ev.preventDefault();
  
   var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+  ev.target.appendChild(document.getElementById(data)); */
+  
+  var _target = $("#" + ev.target.id);
+  var data = ev.dataTransfer.getData("text");
+  
+  
   if(data == "drag1" && ev.target.id =="div1"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
 	  //green();
 	document.getElementById("MASS(kg)").options[1].selected = 'selected';
      imchange();
@@ -1010,7 +1017,12 @@ function drop(ev) {
 	 document.getElementById('drag1').style.height = 100 +"%";
  } 
  
+ 
+ 
  else if( data == "drag2" && ev.target.id =="div2"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
+	 
 	document.getElementById("MASS(kg)").options[2].selected = 'selected';
      imchange();
 	 document.getElementById('drag2').style.position = "absolute";
@@ -1020,6 +1032,9 @@ function drop(ev) {
 	 document.getElementById('drag2').style.height = 100 +"%";
  } 
  else if( data == "drag3" && ev.target.id =="div3"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
+	 
 	document.getElementById("MASS(kg)").options[3].selected = 'selected';
      imchange();
 	 document.getElementById('drag3').style.position = "absolute";
@@ -1029,6 +1044,9 @@ function drop(ev) {
 	 document.getElementById('drag3').style.height = 100 +"%";
  }
  else if( data == "drag4" && ev.target.id =="div4"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
+	 
 	document.getElementById("MASS(kg)").options[4].selected = 'selected';
      imchange();
 	 document.getElementById('drag4').style.position = "absolute";
@@ -1037,6 +1055,11 @@ function drop(ev) {
 	 document.getElementById('drag4').style.width = 93 +"%";
 	 document.getElementById('drag4').style.height = 100 +"%";
  }
+ 
+ else if((data == "drag1" && ev.target.id !="div1") || (data == "drag2" && ev.target.id !="div2") || (data == "drag3" && ev.target.id !="div3") || (data == "drag4" && ev.target.id !="div4")){
+	 ev.preventDefault(); 
+	alert('Place weights properly');
+ } 
  
 }
 

@@ -680,6 +680,13 @@ function Resetcontroller(){
 	  document.getElementById("plotbucket").style.display="block";
 	  document.getElementById("chartContainer").style.display="block";
 	  document.getElementById("chartContainer2").style.display="none";
+	  document.getElementById("slopeline").style.display="none";
+	document.getElementById("btnangl").style.visibility ="hidden";
+	document.getElementById("btnlngth").style.visibility ="hidden";
+	document.getElementById("btnhpos").style.visibility ="hidden";
+	document.getElementById("btnvpos").style.visibility ="hidden";
+	  
+	  
 	var y= new Array();
 var dataPoints=[];
 
@@ -758,16 +765,16 @@ function myFunction() {
     {
        
 	  title:{
-      text: "OpenLoop Step plot"
+      text: "OpenLoop Step Plot"
 	  
       },
 	  
 	  axisX:{
         interlacedColor: "#D9D9DA",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
 	  axisY: {
-            title: "Amplitude(Encoder position counts)",
+            title: "Amplitude (Encoder position counts)",
 			
 			//maximum:0.0018,
         },
@@ -812,13 +819,23 @@ function myFunction() {
   }
 
   
+  
   function plotvelocity(){
 	var v= new Array();
 	
 	document.getElementById("plotbucket").style.display="block";
 	document.getElementById("chartContainer").style.display="none";
-	  document.getElementById("chartContainer2").style.display="block";
-var dataPoints=[];
+	document.getElementById("chartContainer2").style.display="block";
+	document.getElementById("slopeline").style.display="block";
+	document.getElementById("btnangl").style.visibility ="visible";
+	document.getElementById("btnlngth").style.visibility ="visible";
+	document.getElementById("btnhpos").style.visibility ="visible";
+	document.getElementById("btnvpos").style.visibility ="visible";
+	  
+	  
+	  
+	  
+var dataPoints=[],downxaxis=[],upxaxis=[];
 
 var ipvalue = parseFloat(Math.abs(Number(document.getElementById('range').innerHTML)));///in cmeter new edit
 	
@@ -868,7 +885,7 @@ var ipvalue = parseFloat(Math.abs(Number(document.getElementById('range').innerH
 		 var cmeter = parseFloat(v[t]/0.691617);
 		var counts = parseFloat(cmeter*2266.288952);
 		  
-		  
+		 
 		  /*var cmcount = parseFloat(2266.28895184);//acc to manual 7.06 cm = 16000 counts, hence 1cm = approx 2266.28895184 counts, hence 10^-3 m = 2266.28895184 counts
 		  var mcount = parseFloat(cmcount * 1000);                                   //hence 1 m = 2266.28895184/10^-3 counts.....or (2266.28895184 * 10^3)counts
 		  var counts = (mcount * v[t]);*/
@@ -876,48 +893,162 @@ var ipvalue = parseFloat(Math.abs(Number(document.getElementById('range').innerH
 		  dataPoints.push({x:(t), y:(counts)});
 		  
 		  
+		  downxaxis.push({x:(t), y:(-100000)});
+		 upxaxis.push({x:(t), y:(100000)});
 	  } 
+	  
+	  
 	  
 	  var chart = new CanvasJS.Chart("chartContainer2",
     {
        
 	  title:{
-      text: "Velocity vs. Time plot"
+      text: "Velocity vs. Time Plot"
 	  
       },
+	  toolTip: {
+    fontColor: "black",
+ },
+	  axisX:[
 	  
-	  axisX:{
+	  {
         interlacedColor: "#D9D9DA",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
-	  axisY: {
-            title: "Velocity ( Encoder counts )",
+	  {/////input y axis invisible
+			gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    labelFormatter: function(){
+      return " ";}
+	  
+		}
+		],
+		
+		axisX2: {
+        title: "",
+		gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    labelFormatter: function(){
+      return " ";}
+      },		
+		
+	  axisY:[ 
+	  {
+            title: "Velocity (Encoder counts/sec)",
+			minimum:-100000,
+			maximum:100000,
 			
-			//maximum:0.0018,
         },
+		/* {/////input y axis invisible
+			gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    labelFormatter: function(){
+      return " ";}
+	  
+		} */
+		],
       data: [
-      {        
+      { 
+		 axisXType: "primary", 
         type: "spline",
 		color:"black",
-        dataPoints:dataPoints
-		
-      }
-      ]
+        dataPoints:dataPoints		
+      },
+	  {
+		 axisXType: "primary", 
+        type: "line",
+		color:"#D8D8D8",
+		 markerSize: 2,
+        dataPoints:downxaxis
+	  },
+	  {
+		 axisXType: "secondary", 
+        type: "line",
+		color:"#D8D8D8",
+		 markerSize: 2,
+        dataPoints:upxaxis
+	  }
+	  
+		],
+      
     });
 
     chart.render();
+	
+	
 	document.getElementById("exportVelocityChart").addEventListener("click",function(){
 	chart.exportChart({format: "jpg"})});
   } 
+	var pos = 10;  
+	var countL = 0;  
+	function moveL(){
+	countL++;
+		
+	document.getElementById('slopeline').style.left = (pos+countL) + '%';	
+		
+	}  
+	function moveR(){
+	countL--;
+		
+	document.getElementById('slopeline').style.left = (pos+countL) + '%';	
+		
+	}   
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+	var posT = 20;  
+	var countT = 0;  
+	function moveT(){
+	countT++;
+		
+	document.getElementById('slopeline').style.top = (posT+countT) + '%';	
+		
+	}  
+	function moveD(){
+	countT--;
+		
+	document.getElementById('slopeline').style.top = (posT+countT) + '%';	
+		
+	}    
+	
+	var angle = 0;	
+	function rotateLine(){
+	angle++;
+	var deg = angle*4;
+	//alert(deg);
+	
+	var obj = document.getElementById('slopeline');
+	
+	obj.style.transform ="rotate("+deg+"deg)";
+	//obj.style.transformOrigin ="49.8% 51%";	
+		
+	}  
+	function rotateLineRev(){
+	angle--;
+	var deg = angle*4;
+	//alert(deg);
+	
+	var obj = document.getElementById('slopeline');
+	
+	obj.style.transform ="rotate("+deg+"deg)";
+	//obj.style.transformOrigin ="49.8% 51%";	
+		
+	}    
+	var length = 80;///slope height  
+	var countH = 0;  
+	function InLine(){
+	countH++;
+		
+	document.getElementById('slopeline').style.height = (length+countH) + '%';	
+		
+	}  
+	function DeLine(){
+	countH--;
+		
+	document.getElementById('slopeline').style.height = (length+countH) + '%';	
+		
+	}    
 	  
 	  
 	  
@@ -995,6 +1126,8 @@ var TM2 =parseFloat(m2+mc);
   var zetaAvg = 0.5* (zeta1Avg + zeta2Avg);
   
   //final calculation show//
+  //var mc_calc = (parseFloat(parseFloat(m1 * wn12) - parseFloat(m2 * wn22))/ (parseFloat(wn22 - wn12)));
+  //var k_calc = parseFloat(wn22 * parseFloat(m2 + mc_calc));
   
   document.getElementById('MC').value= '0.77';
 document.getElementById('K').value= keq;
@@ -1099,11 +1232,18 @@ function drag(ev) {
 
 function drop(ev) {
 	 
-  ev.preventDefault();
+  /* ev.preventDefault();
  
   var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+  ev.target.appendChild(document.getElementById(data)); */
+  
+  var _target = $("#" + ev.target.id);
+  var data = ev.dataTransfer.getData("text");
+  
+  
   if(data == "drag1" && ev.target.id =="div1"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
 	  //green();
 	document.getElementById("MASS(kg)").options[1].selected = 'selected';
      imchange();
@@ -1114,7 +1254,12 @@ function drop(ev) {
 	 document.getElementById('drag1').style.height = 100 +"%";
  } 
  
+ 
+ 
  else if( data == "drag2" && ev.target.id =="div2"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
+	 
 	document.getElementById("MASS(kg)").options[2].selected = 'selected';
      imchange();
 	 document.getElementById('drag2').style.position = "absolute";
@@ -1124,6 +1269,9 @@ function drop(ev) {
 	 document.getElementById('drag2').style.height = 100 +"%";
  } 
  else if( data == "drag3" && ev.target.id =="div3"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
+	 
 	document.getElementById("MASS(kg)").options[3].selected = 'selected';
      imchange();
 	 document.getElementById('drag3').style.position = "absolute";
@@ -1133,6 +1281,9 @@ function drop(ev) {
 	 document.getElementById('drag3').style.height = 100 +"%";
  }
  else if( data == "drag4" && ev.target.id =="div4"){
+	 ev.preventDefault(); 
+	 ev.target.appendChild(document.getElementById(data));  
+	 
 	document.getElementById("MASS(kg)").options[4].selected = 'selected';
      imchange();
 	 document.getElementById('drag4').style.position = "absolute";
@@ -1141,6 +1292,11 @@ function drop(ev) {
 	 document.getElementById('drag4').style.width = 93 +"%";
 	 document.getElementById('drag4').style.height = 100 +"%";
  }
+ 
+ else if((data == "drag1" && ev.target.id !="div1") || (data == "drag2" && ev.target.id !="div2") || (data == "drag3" && ev.target.id !="div3") || (data == "drag4" && ev.target.id !="div4")){
+	 ev.preventDefault(); 
+	alert('Place weights properly');
+ } 
  
 }
 

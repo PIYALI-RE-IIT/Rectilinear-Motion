@@ -3,7 +3,7 @@
   "questions": [
     
     {
-      "question": "1. The equation of free vibration of a system is   d<sup>2</sup>x/dt<sup>2</sup> +64π<sup>2</sup>x = 0, its natural frequency would be,",
+      "question": "1. The equation of free vibration of a system is d<sup>2</sup>x/dt<sup>2</sup> + 64π<sup>2</sup>x = 0, its natural frequency would be,",
       "answers": {
         "a": "4 &pi; Hz ",
         "b": "4 Hz",
@@ -14,7 +14,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "2. The equation of motion of a spring mass damper system is    d<sup>2</sup>x/dt<sup>2</sup> + 3 dx/dt + 9kx = 10 sin⁡(5t). The damping factor for the system is,",
+      "question": "2. The equation of motion of a spring mass damper system is d<sup>2</sup>x/dt<sup>2</sup> + 3 dx/dt + 9kx = 10 sin⁡(5t). The damping factor for the system is,",
       "answers": {
         "a": "0.25 ",
         "b": "2 ",
@@ -36,24 +36,24 @@
       "difficulty": "beginner"
     },
     {
-      "question": "4. In an oscillating mass-spring system, the velocity of the mass is greatest when the mass is,",
+      "question": "4. In an oscillating mass-spring system, the velocity of the mass is greatest when the mass is ____",
       "answers": {
-        "a": " at the equilibrium point ",
-        "b": "at the point of maximum displacement",
-		"c": "at the point where acceleration is greatest.",
-        "d": "halfway between the equilibrium point and maximum displacement"
+        "a": "At the equilibrium point ",
+        "b": "At the point of maximum displacement",
+		"c": "At the point where acceleration is greatest.",
+        "d": "Halfway between the equilibrium point and maximum displacement"
         
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "5. An object attached to an ideal spring executes simple harmonic motion. If its total energy needs to be doubled, we need to",
+      "question": "5. An object attached to an ideal spring executes simple harmonic motion. If its total energy needs to be doubled, we need to _____",
       "answers": {
-        "a": "  double the force constant (spring constant) of the spring ",
-        "b": " double the amplitude of vibration",
-        "c": "double both the amplitude and force constant (spring constant).",
-        "d": " double the mass"
+        "a": "Double the force constant (spring constant) of the spring ",
+        "b": "Double the amplitude of vibration",
+        "c": "Double both the amplitude and force constant (spring constant).",
+        "d": "Double the mass"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
@@ -70,7 +70,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "7. A vibrating system consists of a mass of 200kg and a spring stiffness of 80 N/m, the natural frequency of vibration of the system is,",
+      "question": "7. A vibrating system consists of a mass of 200 kg and a spring stiffness of 80 N/m, the natural frequency of vibration of the system is,",
       "answers": {
         "a": "20 rad/s ",
         "b": "40 rad/s",
@@ -81,9 +81,9 @@
       "difficulty": "beginner"
     }, 
     {
-      "question": "8. A block whose mass is 4kg, is fastened to a spring of spring constant 64 N/m. The block is pulled from its equilibrium position in a frictionless surface and released, the period of resulting motion in seconds is,",
+      "question": "8. A block whose mass is 4 kg, is fastened to a spring of spring constant 64 N/m. The block is pulled from its equilibrium position in a frictionless surface and released, the period of resulting motion in seconds is,",
       "answers": {
-        "a": " &#960;/2 ",
+        "a": "&#960;/2 ",
         "b": "&#960;/4",
 		"c": "2&#960;",
         "d": "4&#960;"
@@ -95,7 +95,7 @@
     {
       "question": "9. A particle attached to a vertical spring and pulled down to 0.01 m below its mean position and released , its initial acceleration is 0.16 m/s<sup>2</sup>, the time period in seconds will be, ",
       "answers": {
-        "a": " &#960;/2 ",
+        "a": "&#960;/2 ",
         "b": "&#960;/4",
 		"c": "2&#960;",
         "d": "4&#960;"
@@ -107,10 +107,10 @@
 	{
       "question": "10. Stretching a spring increases its ______________ energy",
       "answers": {
-        "a": " gravitational potential ",
-        "b": "mechanical kinetic",
-		"c": "vibrational kinetic",
-        "d": "elastic potential"
+        "a": "Gravitational potential ",
+        "b": "Mechanical kinetic",
+		"c": "Vibrational kinetic",
+        "d": "Elastic potential"
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
@@ -119,7 +119,7 @@
 	{
       "question": "11. Frequency of a spring is 'n' after suspending mass 'M'. Now after suspending mass '4M' the frequency will be, ",
       "answers": {
-        "a": " 2n ",
+        "a": "2n",
         "b": "n/4",
 		"c": "n",
         "d": "n/2"
