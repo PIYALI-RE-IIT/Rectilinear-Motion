@@ -1,6 +1,6 @@
 ### Procedure
 
-**Plant Setup:**
+**Plant Setup**
 								
 <div align="center">
 <img  src="./images/scth.png" style="width:81%;height:30%"><br/>

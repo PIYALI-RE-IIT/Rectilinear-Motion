@@ -1,6 +1,6 @@
 # Theory
 
- **Rectilinear Motion:**
+ **Rectilinear Motion**
 				  
 Rectilinear motion is another name of straight-line motion. This type of motion describes the movement of a particle or a body.
 A body is said to experience rectilinear motion if any two particles of the body travel the same distance along two parallel straight lines.
@@ -15,12 +15,12 @@ The fig 1 illustrates rectilinear motion for a body.
 The experimental control system in practical laboratory is comprised of the electromechanical plant which consists of the spring-mass mechanism, its actuator and sensors and a subsystem 
 i.e. an operating program or software which runs on a PC.
 
-<b>Encoder:</b>
+<b>Encoder</b>
 
 An encoder is a sensor that converts a positional output into an electronic signal. In this experiment, encoder counts are used as the system units of position, where the counts correspond to the encoder pulses and controller-internal register values. Here, 1 encoder revolution is equivalent to 16,000 encoder counts, which corresponds to 7.06 cm.
 								
                                                             
-**Rectilinear Motion Setup in Control Systems:**
+**Rectilinear Motion Setup in Control Systems**
 
 <div align = "center">
 <img alt="" src="./images/plant.png" class="img-fluid">
@@ -81,7 +81,7 @@ The hardware gain, <i style ="font-family:'Bodoni MT';font-size:20px;">k<sub>hw<
 
 $$k_{hw} = k_c \ k_a \ k_t \ k_{mp} \ k_e \ k_{ep} \tag{7}$$
 
-where the theoretical values are:
+where the theoretical values are
 
 <i style ="font-family:'Bodoni MT';font-size:20px;">k<sub>c</sub></i>, the DAC gain, = 10V / 32,768 DAC counts
 
